@@ -85,7 +85,7 @@ h1 {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
 .sent {
-    background-color: violet;
+    background-color: rgb(160, 233, 241);
     align-self: flex-end;
     align-items: end;
     padding: 10px;
