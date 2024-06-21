@@ -1,71 +1,148 @@
-h1{
+/* Base styles */
+h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
+    color: #333; /* Improved text color */
+    font-family: 'Arial', sans-serif; /* Added font */
+    font-size: 1.5rem; /* Adjusted font size */
     grid-column: span 3;
     margin: 0;
+    padding: 10px; /* Added padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
 }
-.container{
+.container {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 0.4fr 4fr 0.75fr;
+    gap: 10px; /* Added gap */
+    padding: 10px; /* Added padding */
+    box-sizing: border-box;
 } 
-#chatsvg{
+#chatsvg {
     padding: 0.5%;
     height: 80%;
 }   
-.left{
+.left {
     background-color: red;
     grid-row: span 2;
     margin-top: 0;
 }
-.right{
+.right {
     background-color: blue;
     grid-row: span 2;
 }
-.box{
-    background-color: aqua;
+.box {
+    background-color: #e0f7fa; /* Softer background color */
     overflow: auto;
-    border: 3px solid black;
-    border-bottom: 0px;
+    border: 1px solid #b0bec5; /* Softer border color */
+    border-bottom: 0;
     display: flex;
     flex-direction: column;
-    padding-right: 2%;
+    padding: 10px; /* Adjusted padding */
+    border-radius: 10px; /* Added border radius */
 }
-.area{
-    background-color: greenyellow;
+.area {
+    background-color: #c8e6c9; /* Softer background color */
     display: flex;
-    border: 3px solid black;     
+    border: 1px solid #b0bec5; /* Softer border color */
+    border-radius: 10px; /* Added border radius */
+    padding: 10px; /* Adjusted padding */
+    align-items: center; /* Center aligned items */
 }
-
-.message{
-    background-color: white;
-    border: 1px solid black;
-    height: 80%;
-    flex-basis: 85%;
-    border-radius: 4%; 
-    margin:1%;
+.message {
+    background-color: #fff; /* Kept white */
+    border: 1px solid #cfd8dc; /* Softer border color */
+    border-radius: 10px; /* Added border radius */
+    margin: 5px 0; /* Adjusted margin */
+    padding: 10px; /* Added padding */
     overflow: auto;
 }
-#send{
+#send {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 50%;
-    width: 10%;
-    margin: 1.75% ;
-    border-radius: 20%;
+    height: 40px; /* Adjusted height */
+    width: 40px; /* Adjusted width */
+    margin: 0 10px; /* Adjusted margin */
+    background-color: #00796b; /* Changed background color */
+    color: #fff; /* Changed text color */
+    border: none;
+    border-radius: 50%; /* Adjusted border radius */
+    cursor: pointer;
+}
+#send:hover {
+    background-color: #004d40; /* Added hover effect */
 }
 #messageInput {
-    width: calc(100% - 60px); 
+    flex-grow: 1;
     padding: 10px;
-    
+    border: 1px solid #cfd8dc; /* Softer border color */
+    border-radius: 20px; /* Adjusted border radius */
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
-.sent{
+.sent {
     background-color: violet;
     align-self: flex-end;
     align-items: end;
-    padding: 1%;
-    margin: 0.5% ;  
-    border-radius: 20%;  
+    padding: 10px;
+    margin: 5px 0; /* Adjusted margin */
+    border-radius: 10px; /* Adjusted border radius */
+}
+
+/* Media query for phone size */
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 4fr 0.75fr;
+        gap: 0; /* Removed gap */
+        padding: 0; /* Removed padding */
+    }
+
+    .left, .right {
+        display: none;
+    }
+
+    h1 {
+        grid-column: span 1;
+        font-size: 1.2rem; /* Adjusted font size */
+        padding: 5px; /* Adjusted padding */
+        box-shadow: none; /* Removed shadow */
+    }
+
+    .box {
+        border: none;
+        padding-right: 0;
+        margin: 0;
+        height: calc(100vh - 50px - 50px); /* Adjust height to fit within the screen */
+        padding: 10px; /* Adjusted padding */
+        border-radius: 0; /* Removed border radius */
+    }
+
+    .area {
+        height: 50px; /* Adjusted height */
+        padding: 5px; /* Adjusted padding */
+        border-radius: 0; /* Removed border radius */
+    }
+
+    #messageInput {
+        width: calc(100% - 50px); 
+        padding: 5px;
+        font-size: 0.9rem; /* Adjusted font size */
+    }
+
+    #send {
+        height: 35px; /* Adjusted height */
+        width: 35px; /* Adjusted width */
+        margin-left: 5px;
+    }
+
+    .message, .sent {
+        padding: 5px; /* Adjusted padding */
+        margin: 2%; /* Adjusted margin */
+        border-radius: 5px; /* Adjusted border radius */
+    }
 }
