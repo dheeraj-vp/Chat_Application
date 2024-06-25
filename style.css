@@ -21,18 +21,34 @@ h1 {
     padding: 10px; 
     box-sizing: border-box;
 } 
+footer {
+    grid-column: span 3;
+    display: flex;
+    font-weight:700;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    border-top: 1px solid #cfd8dc;
+    margin:0;
+}
 #chatsvg {
     padding: 0.5%;
     height: 80%;
 }   
 .left {
-    background-color: red;
+    background-color: rgb(255, 221, 176);
     grid-row: span 2;
     margin-top: 0;
+    border-radius: 3%;
 }
 .right {
-    background-color: blue;
+    background-color: rgb(255, 221, 176);
     grid-row: span 2;
+    border-radius: 3%;
 }
 .box {
     background-color: #e0f7fa; 
